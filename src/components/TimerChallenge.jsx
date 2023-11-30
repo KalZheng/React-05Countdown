@@ -14,7 +14,8 @@ export default function TimerChallenge({ title, targetTime }) {
   function handleStart() {
     timer.current = setTimeout(() => {
       setTimerExpired(true);
-      dialog.current.showModal();
+    //   dialog.current.showModal();//components is too coupling so we need to decouple it
+      dialog.current.open();
     }, targetTime * 1000);
 
     setTimerStarted(true);
